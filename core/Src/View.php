@@ -45,6 +45,7 @@ class View
     {
         $path = $this->getPathToView($view);
 
+        //var_dump($this->getPathToMain());die();
         if (file_exists($this->getPathToMain()) && file_exists($path)) {
 
             //Импортирует переменные из массива в текущую таблицу символов
