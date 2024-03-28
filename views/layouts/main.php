@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pop it MVC</title>
+    <style>
+
+    </style>
 </head>
 <body>
 <header>
@@ -14,6 +17,11 @@
         <?php
         if (!app()->auth::check()):
             ?>
+            <a href="<?= app()->route->getUrl('/popular') ?>">Популярное</a>
+            <a href="<?= app()->route->getUrl('/history') ?>">История книг</a>
+            <a href="<?= app()->route->getUrl('/add_reader') ?>">Добавить читателя</a>
+            <a href="<?= app()->route->getUrl('/add_books') ?>">Добавить книги</a>
+            <a href="<?= app()->route->getUrl('/add_librarian') ?>">Добавить библиотекаря</a>
             <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
             <a href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
         <?php

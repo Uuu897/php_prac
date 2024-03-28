@@ -49,4 +49,28 @@ class Site
         app()->route->redirect('/hello');
     }
 
+    public function popular(): string
+    {
+        return new View('site.popular', ['message' => 'popular working']);
+    }
+
+    public function history(): string
+    {
+        return new View('site.history', ['message' => 'history working']);
+    }
+
+    public function add_reader(): string
+    {
+        return new View('site.add_reader', ['message' => 'add_reader working']);
+    }
+
+    public function add_books(): string
+    {
+        return new View('site.add_books', ['message' => 'add_books working']);
+    }
+
+    public function add_librarian(): string
+    {
+        return new View('site.add_librarian', ['message' => 'add_librarian working']);
+    }
 }
