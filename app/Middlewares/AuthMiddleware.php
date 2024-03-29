@@ -4,6 +4,7 @@ namespace Middlewares;
 
 use Src\Auth\Auth;
 use Src\Request;
+use Src\Session;
 
 class AuthMiddleware
 {

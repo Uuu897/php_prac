@@ -10,9 +10,9 @@ use Src\Auth\Auth;
 
 class Site
 {
-    public function index(Request $request): string
+    public function index(): string
     {
-        $posts = Post::where('id', $request->id)->get();
+        $posts = Post::all();
         return (new View())->render('site.post', ['posts' => $posts]);
     }
 
@@ -56,12 +56,12 @@ class Site
 
     public function history(): string
     {
-        return new View('site.history', ['message' => 'history working']);
+        return new View('site.history', ['message' => '']);
     }
 
     public function add_reader(): string
     {
-        return new View('site.add_reader', ['message' => 'add_reader working']);
+        return new View('site.add_reader', ['message' => 'Добавить читателя']);
     }
 
     public function add_books(): string
