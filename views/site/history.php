@@ -1,8 +1,10 @@
 <style>
+
     .left{
         width: 644px;
         height: 745px;
         background-color: #8B8B8B;
+        margin: 100px auto;
         border: none;
         font-family: "Arial";
         font-size: 16px;
@@ -14,14 +16,17 @@
         height: 745px;
         background-color: #8B8B8B;
         border: none;
+        margin: 100px auto;
         font-family: "Arial";
         font-size: 16px;
         font-weight: bold;
+
     }
 
     .blocks-flex{
         display: flex;
         justify-content: space-around;
+        list-style-type: none;
     }
 </style>
 

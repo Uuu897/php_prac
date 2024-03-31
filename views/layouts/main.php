@@ -47,7 +47,7 @@
         else:
         if (app()->auth::user()->id_role === 1):
             ?>
-            <a href="<?= app()->route->getUrl('/add_librarian') ?>">Добавить библиотекаря</a>
+            <a href="<?= app()->route->getUrl('/signup') ?>">Добавить библиотекаря</a>
             <?php
         elseif (app()->auth::user()->id_role === 2) :
             ?>
