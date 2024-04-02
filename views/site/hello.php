@@ -1,4 +1,14 @@
 
+<div class="login-form">
+    <p class="text-login">Поиск книги</p>
+    <form method="post">
+        <input type="text" name="number" placeholder="Номер книги">
+        <input type="text" name="autor" placeholder="Автор">
+
+        <button>Искать</button>
+    </form>
+</div>
+
 
 <style>
     input, select{
@@ -48,13 +58,3 @@
 </style>
 
 
-
-<div class="login-form">
-    <p class="text-login">Поиск книги</p>
-    <form method="post">
-        <input type="text" name="number" placeholder="Номер">
-        <input type="text" name="autor" placeholder="Автор">
-
-        <button>Искать</button>
-    </form>
-</div>

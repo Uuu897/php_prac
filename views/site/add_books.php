@@ -49,11 +49,25 @@
 <div class="login-form">
     <p class="text-login">Добавить книгу</p>
     <form method="post">
-        <input type="text" name="number" placeholder="Номер">
+        <input type="text" name="number" placeholder="Номер книги">
         <input type="text" name="autor" placeholder="Автор">
         <input type="text" name="genre" placeholder="Жанр">
         <input type="text" name="annotacia" placeholder="Краткая аннотация">
 
         <button>Добавить</button>
+    </form>
+</div>
+
+<div class="login-form">
+    <p class="text-login">Выдать/Вернуть книгу</p>
+    <form method="post">
+        <input type="text" name="book_number" placeholder="Номер книги">
+        <input type="text" name="reader_number" placeholder="Номер читателя">
+        <input type="date" name="return_date">
+        <select name="status">
+            <option value="issue">Выдать</option>
+            <option value="return">Вернуть</option>
+        </select>
+        <button>Выдать/Вернуть</button>
     </form>
 </div>

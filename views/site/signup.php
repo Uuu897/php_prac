@@ -1,3 +1,16 @@
+
+<h3><?= $message ?? ''; ?></h3>
+<div class="login-form">
+    <p class="text-login">Добавление библиотекаря</p>
+    <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+        <label><input type="text" name="name" placeholder="ФИО"></label>
+        <label> <input type="text" name="login" placeholder="login"></label>
+        <label> <input type="text" name="password" placeholder="Пароль"></label>
+        <button>Зарегистрироваться</button>
+    </form>
+</div>
+
 <style>
     input, select{
         width: 505px;
@@ -44,13 +57,3 @@
         font-weight: bold;
     }
 </style>
-
-<div class="login-form">
-    <p class="text-login">Регистрация</p>
-    <form method="post">
-        <input type="text" name="name" placeholder="ФИО">
-        <input type="text" name="login" placeholder="login">
-        <input type="text" name="password" placeholder="Пароль">
-        <button>Зарегистрироваться</button>
-    </form>
-</div>
