@@ -1,3 +1,39 @@
+<h3><?= $message ?? ''; ?></h3>
+<div class="login-form">
+    <p class="text-login">Добавить книгу</p>
+    <form method="post" enctype="multipart/form-data">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+        <input type="text" name="title_book" placeholder="Название">
+        <select name="id_author">
+            <option value="">Автор</option>
+            <?php foreach ($author as $author) { ?>
+                <option value="<?php echo $author->id_author; ?>">
+                    <?php echo $author->FIO; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <select name="id_genre">
+            <option value="">Жанр</option>
+            <?php foreach ($genre as $genre) { ?>
+                <option value="<?php echo $genre->id_genre; ?>">
+                    <?php echo $genre->name_genre; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <input type="date" name="publication_year">
+        <select name="new_edition_or_not">
+            <option disabled selected>Новое ли издание</option>
+            <option value="1">да</option>
+            <option value="0">нет</option>
+        </select>
+        <input type="text" name="annotacia" placeholder="Краткая аннотация">
+
+        <button class="read-btn" type="submit">Добавить</button>
+    </form>
+</div>
+
+
+
 <style>
     input, select{
         width: 505px;
@@ -44,43 +80,3 @@
         font-weight: bold;
     }
 </style>
-
-
-
-
-<h3><?= $message ?? ''; ?></h3>
-<div class="login-form">
-    <p class="text-login">Добавить книгу</p>
-    <form method="post" enctype="multipart/form-data">
-        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-        <input type="text" name="title_book" placeholder="Название">
-        <select name="id_author">
-            <option value="">Автор</option>
-            <?php foreach ($author as $author) { ?>
-                <option value="<?php echo $author->id_author; ?>">
-                    <?php echo $author->FIO; ?>
-                </option>
-            <?php } ?>
-        </select>
-        <select name="id_genre">
-            <option value="">Жанр</option>
-            <?php foreach ($genre as $genre) { ?>
-                <option value="<?php echo $genre->id_genre; ?>">
-                    <?php echo $genre->name_genre; ?>
-                </option>
-            <?php } ?>
-        </select>
-        <input type="date" name="publication_year">
-        <select name="new_edition_or_not">
-            <option disabled selected>Новое ли издание</option>
-            <option value="1">да</option>
-            <option value="0">нет</option>
-        </select>
-        <input type="text" name="annotacia" placeholder="Краткая аннотация">
-
-        <button class="read-btn" type="submit">Добавить</button>
-    </form>
-</div>
-
-
-

@@ -45,8 +45,10 @@
     }
 </style>
 
-
+<h3><?= $message ?? ''; ?></h3>
 <div class="login-form">
+    <form method="post" enctype="multipart/form-data">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <p class="text-login">Добавить библиотекаря</p>
     <form method="post">
         <input type="text" name="email" placeholder="email">

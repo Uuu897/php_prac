@@ -6,6 +6,7 @@ use Model\Author;
 use Model\Book;
 use Model\Genre;
 use Model\Post;
+use Model\Reader;
 use Src\Request;
 use Src\View;
 use Model\User;
@@ -73,7 +74,7 @@ class Site
 
     public function popular(): string
     {
-        return new View('site.popular', ['message' => 'popular working']);
+        return new View('site.popular', ['message' => '']);
     }
 
     public function history(): string
@@ -81,11 +82,14 @@ class Site
         return new View('site.history', ['message' => '']);
     }
 
-    public function add_reader(): string
+    public function add_reader(Request $request): string
     {
-        return new View('site.add_reader', ['message' => 'Добавить читателя']);
+        $reader = Reader::all();
+        if ($request->method === 'POST' && Reader::create($request->all())) {
+            app()->route->redirect('/add_reader');
+        }
+        return new View('site.add_reader', ['reader' => $reader,]);
     }
-
     public function add_books(Request $request): string
     {
         $book = Book::all();
@@ -99,6 +103,6 @@ class Site
 
     public function add_librarian(): string
     {
-        return new View('site.add_librarian', ['message' => 'add_librarian working']);
+        return new View('site.add_librarian', ['message' => '']);
     }
 }

@@ -3,8 +3,8 @@
     <p class="text-login">Поиск книги</p>
     <form method="post">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-        <input type="text" name="number" placeholder="Номер книги">
-        <input type="text" name="name" placeholder="Название">
+        <input type="text" name="author" placeholder="Автор">
+        <input type="text" name="title_book" placeholder="Название">
 
         <button>Искать</button>
     </form>

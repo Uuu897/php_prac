@@ -42,7 +42,6 @@
         if (!app()->auth::check()):
             ?>
         <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
-        <a href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
         <?php
         else:
         if (app()->auth::user()->id_role === 1):
