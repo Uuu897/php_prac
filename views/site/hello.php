@@ -2,12 +2,45 @@
 <div class="login-form">
     <p class="text-login">Поиск книги</p>
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <input type="text" name="number" placeholder="Номер книги">
-        <input type="text" name="autor" placeholder="Автор">
+        <input type="text" name="name" placeholder="Название">
 
         <button>Искать</button>
     </form>
 </div>
+
+
+<div class="login-form">
+    <p class="text-login">Выдать/Вернуть книгу</p>
+    <form method="post">
+        <select name="id_book">
+            <option value="">Номер книги</option>
+            <?php foreach ($book as $book_number) { ?>
+                <option value="<?php echo $book_number->id_book; ?>">
+                    <?php echo $book_number->id_book; ?>
+                </option>
+            <?php } ?>
+        </select>
+
+        <select name="id_reader">
+            <option value="">Номер читателя</option>
+            <?php foreach ($reader as $reader_number) { ?>
+                <option value="<?php echo $reader_number->id_reader; ?>">
+                    <?php echo $reader_number->id_reader; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <input type="date" name="loan_date">
+        <input type="date" name="return_date">
+        <select name="status">
+            <option value="issue">Выдать</option>
+            <option value="return">Вернуть</option>
+        </select>
+        <button>Выдать/Вернуть</button>
+    </form>
+</div>
+
 
 
 <style>

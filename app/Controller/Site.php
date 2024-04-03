@@ -2,6 +2,9 @@
 
 namespace Controller;
 
+use Model\Author;
+use Model\Book;
+use Model\Genre;
 use Model\Post;
 use Src\Request;
 use Src\View;
@@ -83,9 +86,15 @@ class Site
         return new View('site.add_reader', ['message' => 'Добавить читателя']);
     }
 
-    public function add_books(): string
+    public function add_books(Request $request): string
     {
-        return new View('site.add_books', ['message' => 'add_books working']);
+        $book = Book::all();
+        $author =Author::all();
+        $genre = Genre::all();
+        if ($request->method === 'POST' && Book::create($request->all())) {
+            app()->route->redirect('/add_books');
+        }
+        return new View('site.add_books', ['book' => $book, 'author' => $author, 'genre' => $genre]);
     }
 
     public function add_librarian(): string

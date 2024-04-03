@@ -46,28 +46,41 @@
 </style>
 
 
+
+
+<h3><?= $message ?? ''; ?></h3>
 <div class="login-form">
     <p class="text-login">Добавить книгу</p>
-    <form method="post">
-        <input type="text" name="number" placeholder="Номер книги">
-        <input type="text" name="autor" placeholder="Автор">
-        <input type="text" name="genre" placeholder="Жанр">
+    <form method="post" enctype="multipart/form-data">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+        <input type="text" name="title_book" placeholder="Название">
+        <select name="id_author">
+            <option value="">Автор</option>
+            <?php foreach ($author as $author) { ?>
+                <option value="<?php echo $author->id_author; ?>">
+                    <?php echo $author->FIO; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <select name="id_genre">
+            <option value="">Жанр</option>
+            <?php foreach ($genre as $genre) { ?>
+                <option value="<?php echo $genre->id_genre; ?>">
+                    <?php echo $genre->name_genre; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <input type="date" name="publication_year">
+        <select name="new_edition_or_not">
+            <option disabled selected>Новое ли издание</option>
+            <option value="1">да</option>
+            <option value="0">нет</option>
+        </select>
         <input type="text" name="annotacia" placeholder="Краткая аннотация">
 
-        <button>Добавить</button>
+        <button class="read-btn" type="submit">Добавить</button>
     </form>
 </div>
 
-<div class="login-form">
-    <p class="text-login">Выдать/Вернуть книгу</p>
-    <form method="post">
-        <input type="text" name="book_number" placeholder="Номер книги">
-        <input type="text" name="reader_number" placeholder="Номер читателя">
-        <input type="date" name="return_date">
-        <select name="status">
-            <option value="issue">Выдать</option>
-            <option value="return">Вернуть</option>
-        </select>
-        <button>Выдать/Вернуть</button>
-    </form>
-</div>
+
+

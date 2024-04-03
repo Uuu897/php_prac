@@ -1,3 +1,12 @@
+<div class="login-form">
+    <p class="text-login">Добавить читателя</p>
+    <form method="post">
+        <input type="text" name="email" placeholder="email">
+        <input type="text" name="FIO" placeholder="ФИО">
+        <button class="read-btn" type="submit">Добавить</button>
+    </form>
+</div>
+
 <style>
     input, select{
         width: 505px;
@@ -45,13 +54,3 @@
     }
 </style>
 
-
-<div class="login-form">
-    <p class="text-login">Добавить читателя</p>
-    <form method="post">
-        <input type="text" name="email" placeholder="email">
-        <input type="text" name="FIO" placeholder="ФИО">
-        <input type="text" name="number" placeholder="Номер читателя">
-        <button>Добавить</button>
-    </form>
-</div>
