@@ -45,15 +45,15 @@
     }
 </style>
 
-<h3><?= $message ?? ''; ?></h3>
-<div class="login-form">
-    <form method="post" enctype="multipart/form-data">
-        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-    <p class="text-login">Добавить библиотекаря</p>
-    <form method="post">
-        <input type="text" name="email" placeholder="email">
-        <input type="text" name="FIO" placeholder="ФИО">
-        <input type="text" name="number" placeholder="Телефон">
+<!--<h3>--><?php //= $message ?? ''; ?><!--</h3>-->
+<!--<div class="login-form">-->
+<!--    <form method="post" enctype="multipart/form-data">-->
+<!--        <input name="csrf_token" type="hidden" value="--><?php //= app()->auth::generateCSRF() ?><!--"/>-->
+<!--    <p class="text-login">Добавить библиотекаря</p>-->
+<!--    <form method="post">-->
+<!--        <input type="text" name="email" placeholder="email">-->
+<!--        <input type="text" name="FIO" placeholder="ФИО">-->
+<!--        <input type="text" name="number" placeholder="Телефон">-->
         <button>Добавить</button>
     </form>
 </div>

@@ -4,6 +4,7 @@ namespace Controller;
 
 use Model\Author;
 use Model\Book;
+use Model\Bookdistribution;
 use Model\Genre;
 use Model\Post;
 use Model\Reader;
@@ -21,11 +22,34 @@ class Site
         return (new View())->render('site.post', ['posts' => $posts]);
     }
 
-    public function hello(): string
+    public function hello(Request $request): string
     {
-        return new View('site.hello', ['message' => 'hello working']);
-    }
+        $book = Book::all();
+        $reader = Reader::all();
+        $book_distribution = Bookdistribution::all();
 
+        if ($request->method === 'POST') {
+            $loan_date = new \DateTime($request->input('loan_date'));
+            $return_date = new \DateTime($request->input('return_date'));
+
+            if ($loan_date> $return_date) {
+                return new View('site.book_distribution', [
+                    'message' => '!Дата выдачи не может быть позже даты возврата!',
+                    'book_distribution' => $book_distribution,
+                    'book' => $book,
+                    'reader' => $reader
+                ]);
+            } else {
+                if (BookDistribution::create($request->all())) {
+                    $message = 'Книга выдана!';
+                    app()->route->redirect('/book_distribution');
+                }
+            }
+        }
+
+        return new View('site.hello', ['book_distribution' => $book_distribution,
+            'book' => $book, 'reader' => $reader]);
+    }
     public function signup(Request $request): string
     {
         if ($request->method === 'POST') {
