@@ -1,6 +1,6 @@
 {
     "name": "uuu897/php_prac",
-    "description": "pomogite",
+    "description": "povoi",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -11,10 +11,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.4 | ^8.0",
-        "illuminate/database": "^12.0@dev",
-        "illuminate/events": "^12.0@dev",
-        "nikic/fast-route": "^2.0@dev"
+        "php": "^7.4 | >=8.0.0"
     },
     "autoload": {
         "psr-4": {
@@ -22,4 +19,5 @@
             "": "app/"
         }
     }
+
 }
