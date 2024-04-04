@@ -9,7 +9,7 @@ class addreader extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'reader';
+    protected $table = 'readers';
     protected $fillable = [
         'FIO',
         'email',

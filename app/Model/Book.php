@@ -10,7 +10,6 @@ class Book extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = 'book';
     protected $fillable = [
         'title_book',
         'annotacia' ,
@@ -18,6 +17,5 @@ class Book extends Model
         'id_author' ,
         'publication_year' ,
         'new_edition_or_not'
-
     ];
 }

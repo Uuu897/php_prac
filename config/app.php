@@ -18,6 +18,7 @@ return [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
         'no_special_chars' => \Validators\NoSpecialCharsValidator::class,
+        'email' => \Validators\EmailValidator::class,
     ]
 
 ];
