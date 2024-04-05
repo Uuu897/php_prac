@@ -50,16 +50,17 @@ class Auth
         }
         return false;
     }
+
     public static function checkAdmin(): bool
     {
-        if (self::$user->roleID() == 1) {
+        if (self::$user->getRole() == 1) {
             return true;
         }
         return false;
     }
     public static function checkLibrarian(): bool
     {
-        if (self::$user->roleID() == 2) {
+        if (self::$user->getRole() == 2) {
             return true;
         }
         return false;
@@ -71,31 +72,11 @@ class Auth
         Session::clear('id');
         return true;
     }
-
-    public static function checkAdmin(): bool
-    {
-        if(self::$user->getRole() == 1){
-            return true;
-        }
-        return false;
-    }
-
-    public static function checkLibrarian(): bool
-    {
-
-
-        if(self::$user->getRole() == 2){
-            return true;
-        }
-        return false;
-    }
-    //Генерация нового токена для CSRF
     public static function generateCSRF(): string
     {
         $token = md5(time());
         Session::set('csrf_token', $token);
         return $token;
     }
-
 
 }

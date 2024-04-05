@@ -7,6 +7,8 @@ return [
     //Классы для middleware
     'routeMiddleware' => [
         'auth' => \Middlewares\AuthMiddleware::class,
+        'admin' => \Middlewares\AdminMiddleware::class,
+        'librarian' => \Middlewares\LibrarianMiddleware::class
     ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,
@@ -18,6 +20,8 @@ return [
         'required' => \Validators\RequireValidator::class,
         'unique' => \Validators\UniqueValidator::class,
         'no_special_chars' => \Validators\NoSpecialCharsValidator::class,
+        'email' => \Validators\EmailValidator::class,
+        'digits' => \Validators\DigitsValidator::class
     ]
 
 ];
