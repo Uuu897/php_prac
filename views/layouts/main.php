@@ -52,8 +52,8 @@
             ?>
             <a href="<?= app()->route->getUrl('/popular') ?>">Популярное</a>
             <a href="<?= app()->route->getUrl('/history') ?>">История книг</a>
-            <a href="<?= app()->route->getUrl('/add_reader') ?>">Добавить читателя</a>
-            <a href="<?= app()->route->getUrl('/add_books') ?>">Добавить книги</a>
+            <a href="<?= app()->route->getUrl('/add_books') ?>">Добавить</a>
+            <a href="<?= app()->route->getUrl('/distributions') ?>">Выдать книгу</a>
         <?php
         endif;
         ?>

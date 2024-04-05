@@ -15,5 +15,6 @@ class addbookValidator extends AbstractValidator
     }
     protected array $rules = [
         'FIO' => ['required', 'alpha'],
+        'publication_year' => ['required', 'digits']
     ];
 }

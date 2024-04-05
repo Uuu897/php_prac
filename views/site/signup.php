@@ -7,7 +7,7 @@
         <label><input type="text" name="name" placeholder="ФИО"></label>
         <label> <input type="text" name="login" placeholder="login"></label>
         <label> <input type="text" name="password" placeholder="Пароль"></label>
-        <button>Зарегистрироваться</button>
+        <button>Добавить</button>
     </form>
 </div>
 

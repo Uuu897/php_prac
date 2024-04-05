@@ -54,6 +54,6 @@
 <!--        <input type="text" name="email" placeholder="email">-->
 <!--        <input type="text" name="FIO" placeholder="ФИО">-->
 <!--        <input type="text" name="number" placeholder="Телефон">-->
-        <button>Добавить</button>
-    </form>
-</div>
+<!--        <button>Добавить</button>-->
+<!--    </form>-->
+<!--</div>-->

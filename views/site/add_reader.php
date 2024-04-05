@@ -1,16 +1,34 @@
+<div class="row">
+    <a href="<?= app()->route->getUrl('/add_books/author') ?>">Добавить автора</a>
+    <a href="<?= app()->route->getUrl('/add_books/genre') ?>">Добавить жанр</a>
+    <a href="<?= app()->route->getUrl('/add_books') ?>">Добавить книги</a>
+    <a href="<?= app()->route->getUrl('/add_reader') ?>">Добавить читателя</a>
+</div>
+
 <h3><?= $message ?? ''; ?></h3>
 <div class="login-form">
     <form method="post" enctype="multipart/form-data">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <p class="text-login">Добавить читателя</p>
     <form method="post">
-        <input type="text" name="email" placeholder="email">
+        <input type="mail" name="email" placeholder="email">
         <input type="text" name="FIO" placeholder="ФИО">
         <button class="read-btn" type="submit">Добавить</button>
     </form>
 </div>
 
 <style>
+    .row{
+        padding-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .row a:hover{
+        opacity: 0.7;
+    }
     input, select{
         width: 505px;
         height: 53px;

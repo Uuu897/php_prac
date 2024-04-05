@@ -10,7 +10,6 @@ class Reader extends Model
     use HasFactory;
 
     public $timestamps = false;
-    protected $table = 'reader';
     protected $fillable = [
         'email' ,
         'FIO',

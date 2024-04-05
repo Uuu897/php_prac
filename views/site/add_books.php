@@ -1,3 +1,9 @@
+<div class="row">
+    <a href="<?= app()->route->getUrl('/add_books/author') ?>">Добавить автора</a>
+    <a href="<?= app()->route->getUrl('/add_books/genre') ?>">Добавить жанр</a>
+    <a href="<?= app()->route->getUrl('/add_books') ?>">Добавить книги</a>
+    <a href="<?= app()->route->getUrl('/add_reader') ?>">Добавить читателя</a>
+</div>
 <h3><?= $message ?? ''; ?></h3>
 <div class="login-form">
     <p class="text-login">Добавить книгу</p>
@@ -20,7 +26,7 @@
                 </option>
             <?php } ?>
         </select>
-        <input type="date" name="publication_year">
+        <input type="text" name="publication_year" placeholder="Год публикации">
         <select name="new_edition_or_not">
             <option disabled selected>Новое ли издание</option>
             <option value="1">да</option>
@@ -35,6 +41,17 @@
 
 
 <style>
+    .row{
+        padding-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .row a:hover{
+        opacity: 0.7;
+    }
     input, select{
         width: 505px;
         height: 53px;
