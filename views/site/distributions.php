@@ -1,5 +1,6 @@
 <h2><?= $message ?></h2>
 <div class="login-form">
+<<<<<<< HEAD
     <p class="text-login">Выдать</p>
     <form method="post">
         <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
@@ -8,15 +9,32 @@
             <?php foreach ($book as $book_number) { ?>
                 <option value="<?php echo $book_number->id_book; ?>">
                     <?php echo $book_number->title_book; ?>
+=======
+    <p class="text-login">Выдать книгу</p>
+    <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+        <select name="id_book">
+            <option value="">Номер книги</option>
+            <?php foreach ($book as $book_number) { ?>
+                <option value="<?php echo $book_number->id_book; ?>">
+                    <?php echo $book_number->id_book; ?>
+>>>>>>> origin/main
                 </option>
             <?php } ?>
         </select>
 
         <select name="id_reader">
+<<<<<<< HEAD
             <option value="">Имя читателя</option>
             <?php foreach ($reader as $reader_number) { ?>
                 <option value="<?php echo $reader_number->id_reader; ?>">
                     <?php echo $reader_number->FIO; ?>
+=======
+            <option value="">Номер читателя</option>
+            <?php foreach ($reader as $reader_number) { ?>
+                <option value="<?php echo $reader_number->id_reader; ?>">
+                    <?php echo $reader_number->id_reader; ?>
+>>>>>>> origin/main
                 </option>
             <?php } ?>
         </select>

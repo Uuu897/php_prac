@@ -1,5 +1,9 @@
 <div class="row">
+<<<<<<< HEAD
     <a href="<?= app()->route->getUrl('/add_books/author') ?>">Добавить автора</a>
+=======
+    <a href="<?= app()->route->getUrl('/add_books/author') ?>">Добавить книгу</a>
+>>>>>>> origin/main
     <a href="<?= app()->route->getUrl('/add_books/genre') ?>">Добавить жанр</a>
     <a href="<?= app()->route->getUrl('/add_books') ?>">Добавить книги</a>
     <a href="<?= app()->route->getUrl('/add_reader') ?>">Добавить читателя</a>
